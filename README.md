@@ -1,19 +1,39 @@
-# ColorPaletteGenerator
-This is the capstone project of MISK Data Science Immersive course. It is a program that will generate a color palette for the user depending on colors data and color theory, the user input will be in the format of a single word. I'll keep updating this repo with my progress till the project is fully implemented. 
+![image](https://user-images.githubusercontent.com/96572809/157335078-6156e25b-e014-4220-95c0-777c6261b108.png)
+# Color Palettes Generator Using Keras
+This is the capstone project of MISK Data Science Immersive course. It is a ML Model that takes words from the user and generate a color related to these words. The user can use from 4 different color schemes to obtain a color palette. Playing around with colors and palettes are very inspiring to any artist. designer, and programmer. I hope this simple implementation can inspire and help you to create more!
 
-### Current status of the project
-<strike>I'm currently working on exploring the possible data sets that I can use, I have 3 options to choose from:
- 
- 1. Palette-and-Text (PAT) dataset collected for the [Text2Color](https://github.com/awesome-davian/Text2Colors) project.
- 2. Improving the [color terms dataset](https://www.kaggle.com/rtatman/color-terms-dataset) by scrapping more labels from text and article that describe colors in words.
- 3. Using Image processing to obtain colors from images that is related to the used word, for this I think of using [Unsplash API](https://unsplash.com/developers).
- 
-I want to test each approach, I'll update the repo with my experiments and decision before moving to the next step.</strike> 19/2/2022
+### Dependencies
+- Tensorflow
+-  Keras
+- numpy
+- pandas
+- tkinter
+- customtkinter
 
-The dataset is ready, I decided to go with PAT dataset, is contains around 10k entries of single words and sentences, and a color pallet for each entry (from 1 to 5 colors). Next step exploring this data, ensuring that everything is correct and trying to visualize the colors which are in (r,g,b) format.
-I'm planning to split the entences  into single words, this will increase my dataset while keeping the colors relative to the word itself. I'll try and ignore the common words such as "the, of, I, etc." when splitting.22/2/2022
 
 ### About the Dataset
-Palette-and-Text (PAT) is a dataset collected by a research team from Korea University and Hong Kong University of Science and Technology. It contains words and a color palette that represent these words, you can read more about their research [here](https://arxiv.org/abs/1804.04128). From the repository of their project, [Text2Color](https://github.com/awesome-davian/Text2Colors), the data can be found in the format of .pkl files. The data was split into a train and test sets. I loaded the .pkl files into panda dataframes and saved them into .csv format. The data contains a total of 10184 entries.
+The used dataset is a combination of two datasets, [keras_colors](https://github.com/Tony607/Keras-Colors) and [Palette-and-Text (PAT)](https://github.com/awesome-davian/Text2Colors) dataset. The cleaning and modification, along with detailed explanation, can be found in the EDA notebook in the data folder.
+
+### About the Model
+The used model for color generating is a Recursive Neural Network (RNN) which was Implemented using Keras library. The model is based on the [project of Tony607](https://github.com/Tony607/Keras-Colors) for color generating.
+
+### About the Color Schemes
+Four color schemes can be applied using this tool to generate color palettes. The figure below shows the color schemes representation on a simple color wheel. Each color scheme serves a purpose and is suited to use for different goals, a good article that explains color schemes with clear examples can be found [here](https://drawpaintacademy.com/color-schemes/)
+
+![image](https://user-images.githubusercontent.com/96572809/157335180-b52a85a2-698f-4ed8-9be4-c5ce7f864a2a.png)
+
+### About the GUI
+The method used to implement the model and make it interactable with users is a simple GUI using tkinter package. A screenshot of the GUI can be found below. To use the GUI, simply install the  dependencies  and run the GUI file inside the GUI folder.
+
+![image](https://user-images.githubusercontent.com/96572809/157335276-4b5980ae-a5d8-4d64-98d6-6ba4fc0032d8.png)
+
+
+### Refrences
+
+-[Text2Colors](https://github.com/awesome-davian/Text2Colors)
+
+-[Keras Colors](https://www.dlology.com/blog/how-to-train-a-keras-model-to-generate-colors/)
+
+-[Color Theory in Python](https://thingsgrow.me/2020/01/02/navigating-through-000000-and-ffffff-color-theory-in-python/)
 
 
